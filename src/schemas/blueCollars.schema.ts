@@ -15,6 +15,17 @@ export class BlueCollar extends Document {
   @Prop({ required: true })
   phone: string;
 
+  @Prop({ required: true })
+  experience: number;
+
+  @Prop({ required: true, unique: true })
+  hourlyRate: number;
+
+  @Prop({ required: true })
+  rating: string;
+
+  @Prop({ required: true,type:true })
+  skills: string[];
 }
 
 export const BlueCollarSchema = SchemaFactory.createForClass(BlueCollar);
