@@ -2,7 +2,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, Types } from 'mongoose';
 
 @Schema({ _id: false, timestamps: true })
-export class User extends Document {
+export class BlueCollar extends Document {
   @Prop({ type: Types.ObjectId, default: () => new Types.ObjectId() })
   _id!: Types.ObjectId;
 
@@ -12,8 +12,9 @@ export class User extends Document {
   @Prop({ required: true, unique: true })
   email: string;
 
-  @Prop({ required: false })
-  phone: string; 
+  @Prop({ required: true })
+  phone: string;
+
 }
 
-export const UserSchema = SchemaFactory.createForClass(User);
+export const BlueCollarSchema = SchemaFactory.createForClass(BlueCollar);

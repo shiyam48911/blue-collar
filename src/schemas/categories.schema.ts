@@ -11,6 +11,9 @@ export class Categories extends Document {
 
     @Prop()
     description: string;
+
+    @Prop({ type: [Types.ObjectId]})
+    blueCollarIds: Types.ObjectId[];
 }
 
 export const CategorySchema = SchemaFactory.createForClass(Categories);
